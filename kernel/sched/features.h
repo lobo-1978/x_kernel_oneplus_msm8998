@@ -42,8 +42,9 @@
  */
 #define SCHED_FEAT_WAKEUP_PREEMPTION 1
 
-#define SCHED_FEAT_HRTICK 0
-#define SCHED_FEAT_DOUBLE_TICK 0
+SCHED_FEAT(HRTICK, false)
+SCHED_FEAT(DOUBLE_TICK, false)
+SCHED_FEAT(LB_BIAS, false)
 
 /*
  * Decrement CPU capacity based on time not spent running tasks
@@ -105,7 +106,7 @@
  * If enabled, this can be used to inform the scheduler about capacity
  * restrictions.
  */
-#define SCHED_FEAT_MIN_CAPACITY_CAPPING 0
+SCHED_FEAT(MIN_CAPACITY_CAPPING, true)
 
 /*
  * Enforce the priority of candidates selected by find_best_target()
